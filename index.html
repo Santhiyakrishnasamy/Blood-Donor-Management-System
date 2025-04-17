@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blood Donor Management System</title>
+  <link rel="stylesheet" href="blood.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Blood Donor Management System</h1>
+
+    <!-- Sign Up Form -->
+    <div class="form" id="signup-form">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" required />
+      <input type="email" id="signup-email" placeholder="Email" required />
+      <input type="password" id="signup-password" placeholder="Password" required />
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="switchForm('login')">Login</a></p>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form" id="login-form" style="display: none;">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Password" required />
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="switchForm('signup')">Sign Up</a></p>
+    </div>
+
+    <!-- Donor Registration Form -->
+    <div class="form" id="donor-form" style="display: none;">
+      <h2>Donor Registration</h2>
+      <input type="text" id="donor-name" placeholder="Your Name" required />
+      <input type="email" id="donor-email" placeholder="Your Email" required />
+      <input type="tel" id="donor-phone" placeholder="Phone Number" required />
+      <input type="text" id="donor-blood" placeholder="Blood Group (e.g. A+)" required />
+      <button onclick="registerDonor()">Register as Donor</button>
+      <p>Need blood? <a href="#" onclick="switchForm('request')">Request Blood</a></p>
+    </div>
+
+    <!-- Donor Request Form -->
+    <div class="form" id="request-form" style="display: none;">
+      <h2>Blood Request</h2>
+      <input type="text" id="request-name" placeholder="Your Name" required />
+      <input type="email" id="request-email" placeholder="Your Email" required />
+      <input type="tel" id="request-phone" placeholder="Phone Number" required />
+      <input type="text" id="request-blood" placeholder="Required Blood Group" required />
+      <button onclick="requestDonor()">Submit Request</button>
+      <p>Want to register as donor? <a href="#" onclick="switchForm('donor')">Register</a></p>
+    </div>
+  </div>
+
+  <script src="blood.js"></script>
+</body>
+</html>
